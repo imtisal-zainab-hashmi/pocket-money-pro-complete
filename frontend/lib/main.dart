@@ -200,7 +200,7 @@ class TransactionItem {
 
 class ApiService {
   static const String baseUrl = "https://pocket-money-backend-production.up.railway.app/api";
-  static const String firebaseWebApiKey = 'AIzaSyAI_ZZupjYPAvZQSj5r3061GBnw8KFxfRc';
+  static const String firebaseWebApiKey = String.fromEnvironment('GOOGLE_API_KEY');
 
   static Map<String, String> get _headers => {'Content-Type': 'application/json'};
 
