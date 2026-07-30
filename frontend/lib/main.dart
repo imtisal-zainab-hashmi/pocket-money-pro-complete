@@ -200,7 +200,7 @@ class TransactionItem {
 
 class ApiService {
   static const String baseUrl = "https://pocket-money-backend-production.up.railway.app/api";
-  static const String firebaseWebApiKey = String.fromEnvironment('GOOGLE_API_KEY');
+  static const String firebaseWebApiKey = "GOOGLE_API_KEY";
 
   static Map<String, String> get _headers => {'Content-Type': 'application/json'};
 
@@ -243,46 +243,46 @@ class ApiService {
     });
   }
 
-  static Future<Map<String, dynamic>> login({
-    required String email,
-    required String password,
-  }) async {
-    final signInRes = await http.post(
-      Uri.parse(
-          'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=$firebaseWebApiKey'),
-      headers: _headers,
-      body: jsonEncode({
-        'email': email,
-        'password': password,
-        'returnSecureToken': true
-      }),
-    );
+static Future<Map<String, dynamic>> login({
+  required String email,
+  required String password,
+}) async {
+  final signInRes = await http.post(
+    Uri.parse(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=$firebaseWebApiKey'),
+    headers: _headers,
+    body: jsonEncode({
+      'email': email,
+      'password': password,
+      'returnSecureToken': true
+    }),
+  ).timeout(const Duration(seconds: 15));  // ← ADD THIS
 
-    final signInData =
-        (jsonDecode(signInRes.body) as Map).cast<String, dynamic>();
+  final signInData =
+      (jsonDecode(signInRes.body) as Map).cast<String, dynamic>();
 
-    if (signInRes.statusCode >= 400) {
-      throw Exception(
-          (signInData['error'] as Map?)?['message'] ?? 'Sign in failed');
-    }
-
-    final String idToken = signInData['idToken'];
-
-    final backendRes = await http.post(
-      Uri.parse('$baseUrl/auth/login'),
-      headers: _headers,
-      body: jsonEncode({'token': idToken}),
-    );
-
-    final backendData =
-        (jsonDecode(backendRes.body) as Map).cast<String, dynamic>();
-
-    if (backendRes.statusCode >= 400) {
-      throw Exception(backendData['message'] ?? 'Backend login failed');
-    }
-
-    return backendData;
+  if (signInRes.statusCode >= 400) {
+    throw Exception(
+        (signInData['error'] as Map?)?['message'] ?? 'Sign in failed');
   }
+
+  final String idToken = signInData['idToken'];
+
+  final backendRes = await http.post(
+    Uri.parse('$baseUrl/auth/login'),
+    headers: _headers,
+    body: jsonEncode({'token': idToken}),
+  ).timeout(const Duration(seconds: 15));  // ← ADD THIS
+
+  final backendData =
+      (jsonDecode(backendRes.body) as Map).cast<String, dynamic>();
+
+  if (backendRes.statusCode >= 400) {
+    throw Exception(backendData['message'] ?? 'Backend login failed');
+  }
+
+  return backendData;
+}
 
   static Future<Map<String, dynamic>> sendTransfer({
     required String senderId,

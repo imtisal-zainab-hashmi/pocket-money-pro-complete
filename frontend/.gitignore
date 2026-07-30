@@ -46,3 +46,6 @@ app.*.map.json
 
 # secret file
 env.json
+
+# google services
+google-services.json
