@@ -156,7 +156,7 @@ This project requires a Google/Firebase API key to run, which is not included in
 
 This project was built collaboratively by two contributors, each focused on a different part of the stack:
 
-<table> <tr> <td align="center" width="200"> <a href="https://github.com/aemi6296-crypto"> <img src="https://github.com/aemi6296-crypto.png" width="100" style="border-radius: 50%;" alt="Frontend Developer" /><br /> <b>Frontend Developer</b> </a> <br /> Flutter (Dart) UI & app development </td> <td align="center" width="200"> <a href="https://github.com/imtisal-zainab-hashmi"> <img src="https://github.com/imtisal-zainab-hashmi.png" width="100" style="border-radius: 50%;" alt="Backend Developer" /><br /> <b>Backend Developer</b> </a> <br /> (Node.js, Express, Firebase) development </td> </tr> </table>
+<table> <tr> <td align="center" width="200"> <a href="https://github.com/aemi6296-crypto"> <img src="https://github.com/aemi6296-crypto.png" width="100" style="border-radius: 50%;" alt="Frontend Developer" /><br /> <b>Frontend Developer</b> </a> <br /> Flutter (Dart) UI & app development </td> <td align="center" width="200"> <a href="https://github.com/imtisal-zainab-hashmi"> <img src="https://github.com/imtisal-zainab-hashmi.png" width="100" style="border-radius: 50%;" alt="Backend Developer" /><br /> <b>Backend Developer</b> </a> <br /> (Node.js, Firebase) development </td> </tr> </table>
 
 
 # Project Purpose
