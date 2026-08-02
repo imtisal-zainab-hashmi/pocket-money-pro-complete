@@ -82,50 +82,23 @@ Firebase / Firestore for data storage
 Backend deployed on Railway
 
  # Project Structure
+
+```
  
 pocket-money-pro/
+├── backend/         
+│   ├── config/        
+│   ├── routes/        
+│   ├── server.js      
+│   └── package.json
+│
+└── frontend/    
+    ├── lib/          
+    ├── android/
+    ├── ios/
+    └── pubspec.yaml
+```
 
-├── frontend/
-
-│   ├── lib/
-
-│   ├── android/
-
-│   └── pubspec.yaml
-
-└── money transfer backend/  
-
-   ├── config/
-   
-   ├── routes/
-   
-   ├── auth.js
-   
-   ├── badges.js
-   
-   ├── chores.js
-   
-   ├── expenses.js
-   
-   ├── notifications.js
-   
-   ├── piggybank.js
-   
-   ├── qrpayments.js
-   
-   ├── reports.js
-   
-   ├── transfer.js
-   
-   ├── vendor.js
-   
-   ├── wallet.js
-   
-   |── wishlist.js
-   
-   ├── server.js
-   
-   └── package.json
 
 <p align="center">
   <img src="assets/chore.png" width="200">
@@ -178,6 +151,13 @@ This project requires a Google/Firebase API key to run, which is not included in
 ```bash
    flutter run --dart-define-from-file=env.json
 ```
+
+# Contributors
+
+This project was built collaboratively by two contributors, each focused on a different part of the stack:
+
+<table> <tr> <td align="center" width="200"> <a href="https://github.com/aemi6296-crypto"> <img src="https://github.com/aemi6296-crypto.png" width="100" style="border-radius: 50%;" alt="Frontend Developer" /><br /> <b>Frontend Developer</b> </a> <br /> Flutter (Dart) UI & app development </td> <td align="center" width="200"> <a href="https://github.com/imtisal-zainab-hashmi"> <img src="https://github.com/imtisal-zainab-hashmi.png" width="100" style="border-radius: 50%;" alt="Backend Developer" /><br /> <b>Backend Developer</b> </a> <br /> (Node.js, Express, Firebase) development </td> </tr> </table>
+
 
 # Project Purpose
 
