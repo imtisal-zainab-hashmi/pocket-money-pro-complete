@@ -1,4 +1,4 @@
- # 💰 **Pocket Money Pro**
+<table> <tr> <td><img src="assets/app_icon.png" width="50" alt="App Icon" /></td> <td><h1>Pocket Money Pro </h1></td> </tr> </table>
 
 A kid-friendly finance app that helps parents send allowance and kids learn to track, save, and spend responsibly.
 
